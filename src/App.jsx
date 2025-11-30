@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Mainsection from "./components/mainsection";
 import Navbar from "./components/navbar";
 import { ThemeContext } from "./context/themecontext";
+import Charts from "./components/mainsectionComponenst/charts";
 export default function App() {
   const { theme } = useContext(ThemeContext);
   return (
@@ -13,6 +14,9 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Mainsection />} />
+        </Routes>
+        <Routes>
+          <Route path="/charts" element={<Charts />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -4,6 +4,7 @@ import Mainsection from "./components/mainsection";
 import Navbar from "./components/navbar";
 import { ThemeContext } from "./context/themecontext";
 import Charts from "./components/mainsectionComponenst/charts";
+import AddExpense from "./components/addExpense/add";
 export default function App() {
   const { theme } = useContext(ThemeContext);
   return (
@@ -17,6 +18,9 @@ export default function App() {
         </Routes>
         <Routes>
           <Route path="/charts" element={<Charts />} />
+        </Routes>
+        <Routes>
+          <Route path="/add" element={<AddExpense />} />
         </Routes>
       </BrowserRouter>
     </div>

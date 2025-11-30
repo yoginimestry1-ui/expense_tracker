@@ -3,6 +3,7 @@ import { CategoryScale } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { useState } from "react";
 import { Data } from "../../utils/data";
+import { Pie } from "react-chartjs-2";
 export default function Charts() {
   const [chartData, setChartData] = useState({
     labels: Data.map((data) => data.year),
@@ -39,11 +40,23 @@ export default function Charts() {
               },
             },
           }}
-          className=""
+          className="border-2 border-neutral-700"
         />
       </div>
 
-      <div></div>
+      <div className="w-[50%] mx-auto">
+        <Pie
+          data={chartData}
+          options={{
+            plugins: {
+              title: {
+                display: true,
+                text: "Users Gained between 2016-2020",
+              },
+            },
+          }}
+        />
+      </div>
     </div>
   );
 }
